@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="892f0527-d11b-4f7e-b9e7-ffe9ba72e6bb" name="Changes" comment="first init">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="892f0527-d11b-4f7e-b9e7-ffe9ba72e6bb" name="Changes" comment="gitignore 수정." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -217,7 +214,7 @@
       <option name="presentableId" value="Default" />
       <updated>1721278311784</updated>
       <workItem from="1721278338933" duration="72571000" />
-      <workItem from="1722245718565" duration="101263000" />
+      <workItem from="1722245718565" duration="101523000" />
     </task>
     <task id="LOCAL-00001" summary="first init">
       <option name="closed" value="true" />
@@ -235,7 +232,15 @@
       <option name="project" value="LOCAL" />
       <updated>1722852191381</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="gitignore 수정.">
+      <option name="closed" value="true" />
+      <created>1722852418725</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1722852418725</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -249,12 +254,12 @@
             <list>
               <RecentGroup>
                 <option name="FILTER_VALUES">
-                  <option value="master" />
+                  <option value="master/main" />
                 </option>
               </RecentGroup>
               <RecentGroup>
                 <option name="FILTER_VALUES">
-                  <option value="master/main" />
+                  <option value="master" />
                 </option>
               </RecentGroup>
             </list>
@@ -288,7 +293,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="master" />
+                        <option value="HEAD" />
                       </list>
                     </value>
                   </entry>
@@ -309,7 +314,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first init" />
-    <option name="LAST_COMMIT_MESSAGE" value="first init" />
+    <MESSAGE value="gitignore 수정." />
+    <option name="LAST_COMMIT_MESSAGE" value="gitignore 수정." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

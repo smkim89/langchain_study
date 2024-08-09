@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="892f0527-d11b-4f7e-b9e7-ffe9ba72e6bb" name="Changes" comment="gitignore 수정 v2">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    <list default="true" id="892f0527-d11b-4f7e-b9e7-ffe9ba72e6bb" name="Changes" comment="read me 작성">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/llm_RAG.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/llm_RAG.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +66,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1722853970768</updated>
-      <workItem from="1722853971821" duration="390000" />
+      <workItem from="1722853971821" duration="42144000" />
     </task>
     <task id="LOCAL-00001" summary="gitignore 수정.">
       <option name="closed" value="true" />
@@ -99,7 +100,15 @@
       <option name="project" value="LOCAL" />
       <updated>1722854233942</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="read me 작성">
+      <option name="closed" value="true" />
+      <created>1722854381934</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1722854381934</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -119,6 +128,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="gitignore 수정." />
     <MESSAGE value="gitignore 수정 v2" />
-    <option name="LAST_COMMIT_MESSAGE" value="gitignore 수정 v2" />
+    <MESSAGE value="read me 작성" />
+    <option name="LAST_COMMIT_MESSAGE" value="read me 작성" />
   </component>
 </project>

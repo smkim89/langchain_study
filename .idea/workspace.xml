@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="892f0527-d11b-4f7e-b9e7-ffe9ba72e6bb" name="Changes" comment="read me 작성">
+    <list default="true" id="892f0527-d11b-4f7e-b9e7-ffe9ba72e6bb" name="Changes" comment="Rag &amp; cache 로 저장하는 방법 study">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/llm_RAG.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/llm_RAG.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +42,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/python-workspace/STT",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -50,6 +51,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\python-workspace\STT" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -66,7 +72,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1722853970768</updated>
-      <workItem from="1722853971821" duration="42144000" />
+      <workItem from="1722853971821" duration="45762000" />
     </task>
     <task id="LOCAL-00001" summary="gitignore 수정.">
       <option name="closed" value="true" />
@@ -108,7 +114,15 @@
       <option name="project" value="LOCAL" />
       <updated>1722854381934</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Rag &amp; cache 로 저장하는 방법 study">
+      <option name="closed" value="true" />
+      <created>1723193429426</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1723193429426</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -129,6 +143,7 @@
     <MESSAGE value="gitignore 수정." />
     <MESSAGE value="gitignore 수정 v2" />
     <MESSAGE value="read me 작성" />
-    <option name="LAST_COMMIT_MESSAGE" value="read me 작성" />
+    <MESSAGE value="Rag &amp; cache 로 저장하는 방법 study" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rag &amp; cache 로 저장하는 방법 study" />
   </component>
 </project>

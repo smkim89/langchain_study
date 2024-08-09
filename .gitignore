@@ -14,3 +14,4 @@ files/
 /dataSources.local.xml
 *.idea
 .idea/
+.cache/

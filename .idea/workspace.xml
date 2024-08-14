@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="892f0527-d11b-4f7e-b9e7-ffe9ba72e6bb" name="Changes" comment="retriver stuff 방식을 직접 개발 해봄.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="892f0527-d11b-4f7e-b9e7-ffe9ba72e6bb" name="Changes" comment="retriver map 방식을 직접 개발 해봄.">
+      <change beforePath="$PROJECT_DIR$/llm_RetrievalMapReduce.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/llm_RetrievalMapReduce.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +71,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1722853970768</updated>
-      <workItem from="1722853971821" duration="66000000" />
+      <workItem from="1722853971821" duration="66275000" />
     </task>
     <task id="LOCAL-00001" summary="gitignore 수정.">
       <option name="closed" value="true" />
@@ -129,7 +129,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723199059779</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="retriver map 방식을 직접 개발 해봄.">
+      <option name="closed" value="true" />
+      <created>1723613648292</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1723613648292</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -152,6 +160,7 @@
     <MESSAGE value="read me 작성" />
     <MESSAGE value="Rag &amp; cache 로 저장하는 방법 study" />
     <MESSAGE value="retriver stuff 방식을 직접 개발 해봄." />
-    <option name="LAST_COMMIT_MESSAGE" value="retriver stuff 방식을 직접 개발 해봄." />
+    <MESSAGE value="retriver map 방식을 직접 개발 해봄." />
+    <option name="LAST_COMMIT_MESSAGE" value="retriver map 방식을 직접 개발 해봄." />
   </component>
 </project>

@@ -7,6 +7,11 @@ from langchain.vectorstores.faiss import FAISS
 import streamlit as st
 from dotenv import load_dotenv
 import os
+from langchain.prompts import ChatPromptTemplate
+from langchain.schema.runnable import RunnableLambda, RunnablePassthrough
+from langchain.chat_models import ChatOpenAI
+from langchain.callbacks import StreamingStdOutCallbackHandler
+from langchain.callbacks.base import BaseCallbackHandler
 
 load_dotenv()
 SERVICE_KEY = os.getenv('OPEN_API_KEY')
@@ -17,6 +22,22 @@ st.set_page_config(
     page_icon="📃",
 )
 
+
+class ChatCallbackHandler(BaseCallbackHandler):
+    message = ""
+
+    def on_llm_start(self, *args, **kwargs):
+        self.message_box = st.empty()
+
+    def on_llm_end(self, *args, **kwargs):
+        save_message(self.message, "ai")
+
+    def on_llm_new_token(self, token, *args, **kwargs):
+        self.message += token
+        self.message_box.markdown(self.message)
+
+
+llm = ChatOpenAI(openai_api_key=SERVICE_KEY, model_name="gpt-3.5-turbo-1106", temperature=0.1, streaming=True, callbacks=[ChatCallbackHandler()])
 
 @st.cache_data(show_spinner="Embedding file...")
 def embed_file(file):
@@ -38,6 +59,8 @@ def embed_file(file):
     retriever = vectorstore.as_retriever()
     return retriever
 
+def save_message(message, role):
+    st.session_state["messages"].append({"message": message, "role": role})
 
 def send_message(message, role, save=True):
     with st.chat_message(role):
@@ -54,8 +77,25 @@ def paint_history():
             save=False,
         )
 
+def format_docs(docs):
+    return "\n\n".join(document.page_content for document in docs)
+
 
 st.title("DocumentGPT")
+
+prompt = ChatPromptTemplate.from_messages(
+    [
+        (
+            "system",
+            """
+            Answer the question using ONLY the following context. If you don't know the answer just say you don't know. DON'T make anything up.
+
+            Context: {context}
+            """,
+        ),
+        ("human", "{question}"),
+    ]
+)
 
 st.markdown(
     """
@@ -80,5 +120,15 @@ if file:
     message = st.chat_input("Ask anything about your file...")
     if message:
         send_message(message, "human")
+        chain = (
+                {
+                    "context": retriever | RunnableLambda(format_docs),
+                    "question": RunnablePassthrough(),
+                }
+                | prompt
+                | llm
+        )
+        with st.chat_message("ai"):
+            response = chain.invoke(message)
 else:
     st.session_state["messages"] = []

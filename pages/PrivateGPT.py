@@ -1,6 +1,6 @@
 import time
 from langchain.document_loaders import UnstructuredFileLoader
-from langchain.embeddings import CacheBackedEmbeddings, OpenAIEmbeddings
+from langchain.embeddings import CacheBackedEmbeddings, OllamaEmbeddings
 from langchain.storage import LocalFileStore
 from langchain.text_splitter import CharacterTextSplitter
 from langchain.vectorstores.faiss import FAISS
@@ -9,9 +9,10 @@ from dotenv import load_dotenv
 import os
 from langchain.prompts import ChatPromptTemplate
 from langchain.schema.runnable import RunnableLambda, RunnablePassthrough
-from langchain.chat_models import ChatOpenAI
+from langchain.chat_models import ChatOllama
 from langchain.callbacks import StreamingStdOutCallbackHandler
 from langchain.callbacks.base import BaseCallbackHandler
+import torch
 
 load_dotenv()
 SERVICE_KEY = os.getenv('OPEN_API_KEY')
@@ -36,8 +37,21 @@ class ChatCallbackHandler(BaseCallbackHandler):
         self.message += token
         self.message_box.markdown(self.message)
 
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+print(device)
 
-llm = ChatOpenAI(openai_api_key=SERVICE_KEY, model_name="gpt-3.5-turbo-1106", temperature=0.1, streaming=True, callbacks=[ChatCallbackHandler()])
+llm = ChatOllama(
+    model="mistral",
+    temperature=0.1,
+    streaming=True,
+    callbacks=[
+        ChatCallbackHandler(),
+    ],
+)
+
+
+# 모델을 글로벌 스코프에서 초기화
+ollama_embeddings = OllamaEmbeddings(model="mistral:latest")
 
 @st.cache_data(show_spinner="Embedding file...")
 def embed_file(file):
@@ -48,13 +62,12 @@ def embed_file(file):
     cache_dir = LocalFileStore(f"./.cache/private_embeddings/{file.name}")
     splitter = CharacterTextSplitter.from_tiktoken_encoder(
         separator="\n",
-        chunk_size=600,
-        chunk_overlap=100,
+        chunk_size=300,
+        chunk_overlap=50,
     )
     loader = UnstructuredFileLoader(file_path)
     docs = loader.load_and_split(text_splitter=splitter)
-    embeddings = OpenAIEmbeddings(openai_api_key=SERVICE_KEY)
-    cached_embeddings = CacheBackedEmbeddings.from_bytes_store(embeddings, cache_dir)
+    cached_embeddings = CacheBackedEmbeddings.from_bytes_store(ollama_embeddings, cache_dir)
     vectorstore = FAISS.from_documents(docs, cached_embeddings)
     retriever = vectorstore.as_retriever()
     return retriever

@@ -41,7 +41,8 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print(device)
 
 llm = ChatOllama(
-    model="mistral",
+    base_url="http://192.168.100.202:11434",
+    model="llama3.1",
     temperature=0.1,
     streaming=True,
     callbacks=[
